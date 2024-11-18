@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="py-6 px-4 bg-white rounded-md">
+  <h2>Select Your Level </h2>
+  <ul class="">
+    <li ><a href="{% url 'register_courses_100lv' %}" class="underline">100lv</a></li>
+    <li><a href="{% url 'register_courses_200lv' %}">200lv</a></li>
+    <li><a href="{% url 'register_courses_300lv' %}">300lv</a></li>
+  </ul>
+</div>
+
+{% endblock %}

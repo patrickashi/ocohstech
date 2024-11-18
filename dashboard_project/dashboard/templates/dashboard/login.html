@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="{% static 'css/custom_login_style.css' %}"> -->
+</head>
+<body>
+    <div class="container">
+        <div class="flex justify-center">
+            <div class="col-md-6 bg-emerald-50 mt-20 rounded-lg">
+                <div class=" mt-10  ">
+                    <div class="text-center flex justify-center align-middle">
+                        <img src="{% static 'images/ocohstechlogo.png' %}" alt="db" class="w-40 mb-4 mr-2 ml-4 text-gray-200" width="25px">
+                    </div>
+                    <div class="bg-emerald-50 px-4 pb-4">
+                        <form method="post" class="">
+                            {% csrf_token %}
+                        
+                            <div class="" >
+                                <label for="id_username">Username</label>
+                                <input type="text" id="id_username" name="username" class="pl-2 border rounded-md" required autofocus>
+                            </div>
+                            <div class=" mt-4">
+                                <label for="id_password">Password</label>
+                                <input type="password" id="id_password" name="password" class="pl-2 border rounded-md" required>
+                            </div>
+                            
+                            <button type="submit" class="mt-4 mb-2 bg-blue-900">Login</button>
+                            <p class="">Do not have an account? <a href="{% url 'register' %}" class="hover:underline">Register</a> </p>
+                            <p class="text-xs"> Forgot your password?<a href="{% url 'password_reset' %}" class="hover:underline" > reset</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
