@@ -1,12 +1,3 @@
-"""
-WSGI config for dashboard_project project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/
-"""
-
 import os
 
 from django.core.wsgi import get_wsgi_application
@@ -14,3 +5,7 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dashboard_project.settings')
 
 application = get_wsgi_application()
+
+# Add static files serving configuration
+from django.contrib.staticfiles.handlers import StaticFilesHandler
+application = StaticFilesHandler(application)
