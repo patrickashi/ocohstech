@@ -203,8 +203,6 @@ def student_subject_view (request):
     favourite_subject = Student.objects.get('favourite_subject')
     return render(request, 'dashboard/profile.html', {'favourite_subject' : favourite_subject})
 
-
-
 # paystack = Paystack(secret_key=settings.PAYSTACK_SECRET_KEY)
 
 logger = logging.getLogger(__name__)
@@ -447,7 +445,7 @@ def hostel_form(request):
             return redirect('hostel')  # Redirect to a success page or any other page
     else:
         form = HostelForm()
-    return render(request, 'dashboard/hostel_form.html', {'form': form})
+    return render(request, 'dashboard/hostel_form.html', {'form': form, 'student': student})
 
 
 def hostel(request):
@@ -477,6 +475,7 @@ def select_level(request):
 
 @login_required
 def register_courses(request, level):
+    student = Student.objects.get(user=request.user)
     if request.method == 'POST':
         form = CourseRegistrationForm(request.POST, level=level)
         if form.is_valid():
@@ -489,7 +488,7 @@ def register_courses(request, level):
     else:
         form = CourseRegistrationForm(level=level)
     
-    return render(request, f'dashboard/register_courses_{level}.html', {'form': form, 'level': level})
+    return render(request, f'dashboard/register_courses_{level}.html', {'form': form, 'level': level, 'student': student}, )
 
 @login_required
 def registration_summary(request):
@@ -508,11 +507,11 @@ def registration_summary(request):
 
 def search(request):
     query = request.GET.get('query')
-    students = Student.objects.filter(
+    student = Student.objects.filter(
         name__icontains=query) | Student.objects.filter(
         department__icontains=query)
     context = {
-        'students': students,
-        'query': query,
+        # 'student': student,
+        # 'query': query,
     }
     return render(request, 'dashboard/search_results.html', context)

@@ -15,7 +15,7 @@
 
         <div class=" px-4 mt-10 shadow-md rounded-lg bg-emerald-50">
             <div class="text-center flex mt-10 justify-center align-middle">
-                <img src="{% static 'images/ocohstechlogo.png' %}" alt="db" class="w-80 mb-4 mr-2 ml-4 text-gray-200" width="25px">
+                <img src="{% static 'images/ocohstechlogo.png' %}" alt="db" class="w-20 mb-4 mr-2 ml-4 text-gray-200" width="25px">
             </div>
             <p class="pb-2 text-center my-4 text-xs font-thin">NB:Update your profile to complete registration</p>
             
@@ -25,7 +25,7 @@
                 {{ profile_form.as_p }}
                 <!-- {{ student_form.as_p }} -->
                 <button type="submit" class="my-4">Register</button>
-                <p class="mb-4">Have an account? <a href="{% url 'login' %}" class="hover:underline">Login</a></p>
+                <p class="mb-4">Old Student? <a href="{% url 'login' %}" class="hover:underline">Login</a></p>
             </form>
         </div>
 
