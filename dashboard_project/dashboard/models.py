@@ -161,11 +161,10 @@ class Hostel(models.Model):
         return f'{self.student} - {self.chosen_hostel} - {self.chosen_floor} - {self.room} - {self.bed_space}'
     
 DEPARTMENTS = [
-    ('medical', 'Medical'),
-    ('engineering', 'Engineering'),
-    ('science', 'Science'),
-    ('art', 'Art'),
-    ('commerce', 'Commerce')
+    ('communityhealth', 'Communityhealth'),
+    ('medlab', 'Medlab'),
+    ('pharmacy', 'Pharmacy'),
+    ('dot', 'Dot'),
 ]
 
 class Course(models.Model):
