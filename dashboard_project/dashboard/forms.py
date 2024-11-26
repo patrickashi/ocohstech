@@ -79,7 +79,7 @@ class StudentUpdateForm(forms.ModelForm):
     class Meta:
         model = Student
         fields = ['name', 'school_name', 'favorite_subject', 'date_of_birth', 'gender', 'marital_status', 'nationality', 'state_of_origin',
-                  'lga', 'phone_number', 'email', 'address', 'profile_photo', 'level', 'department', 'faculty']
+                  'lga', 'phone_number', 'email', 'address', 'profile_photo', 'level', 'department']
         
         
         

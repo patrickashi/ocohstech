@@ -34,7 +34,6 @@ class Student(models.Model):
     school_name = models.CharField(max_length=100)
     favorite_subject = models.CharField(max_length=50)
     level = models.CharField(max_length=10, null=True, blank=True)
-    faculty = models.CharField(max_length=20, unique=True, null=True, blank=True)
     department = models.CharField(max_length=20, unique=True, null=True, blank=True)
     date_of_birth = models.CharField(max_length=50, null=True, blank=True) 
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, null=True)
