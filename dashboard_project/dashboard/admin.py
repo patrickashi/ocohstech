@@ -11,6 +11,7 @@ from .models import Comment
 from .models import Result
 from .models import Hostel
 from .models import Course, CourseRegistration
+from .models import AdmissionForm
 
 
 
@@ -27,6 +28,6 @@ admin.site.register(Result)
 admin.site.register(Hostel)
 admin.site.register(Course)
 admin.site.register(CourseRegistration)
-
+admin.site.register(AdmissionForm)
 #unregister groups
 admin.site.unregister(Group)

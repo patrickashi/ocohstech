@@ -11,7 +11,7 @@
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 <body>
-    <div class="flex justify-center ">
+    <div class="flex justify-center max-w-sm">
 
         <div class=" px-4 mt-10 shadow-md rounded-lg bg-emerald-50">
             <div class="text-center flex mt-10 justify-center align-middle">
@@ -19,7 +19,7 @@
             </div>
             <p class="pb-2 text-center my-4 text-xs font-thin">NB:Update your profile to complete registration</p>
             
-            <form method="post" enctype="multipart/form-data" class="">
+            <form method="post" enctype="multipart/form-data" class="max-w-sm">
                 {% csrf_token %}
                 {{ form.as_p }}
                 {{ profile_form.as_p }}

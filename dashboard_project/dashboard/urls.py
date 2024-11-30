@@ -61,6 +61,8 @@ urlpatterns = [
     path('register_courses/200lv/', views.register_courses, {'level': '200lv'}, name='register_courses_200lv'),
     path('register_courses/300lv/', views.register_courses, {'level': '300lv'}, name='register_courses_300lv'),
     path('summary/', views.registration_summary, name='registration_summary'),
+
+    path('api/submit-admission-form/', views.submit_admission_form, name='submit_admission_form'),
 ]
 
 

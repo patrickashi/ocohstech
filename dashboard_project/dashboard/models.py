@@ -195,4 +195,18 @@ class CourseRegistration(models.Model):
     def __str__(self):
         return f"{self.student} registered for {self.course.title}"
     
+class AdmissionForm(models.Model):
+    name = models.CharField(max_length=100)
+    sex = models.CharField(max_length=10)
+    courseFirstChoice = models.CharField(max_length=100)
+    courseSecondChoice = models.CharField(max_length=100)
+    email = models.EmailField()
+    phoneNumber = models.CharField(max_length=20)
+    guardiansPhoneNumber = models.CharField(max_length=20)
+    address = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+    
     
