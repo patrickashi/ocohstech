@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import random
 
 # Create your models here.
 class Profile(models.Model):
@@ -31,6 +32,16 @@ class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=100, null=True)
     student_id = models.CharField(max_length=10, unique=True, null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        # Only assign student_id if it doesn't already have a value (e.g., for new students)
+        if not self.student_id:
+            self.student_id = self.generate_student_id()
+        super().save(*args, **kwargs)
+
+    def generate_student_id(self):
+        # Generate a random 9-digit number as a string
+        return str(random.randint(100000000, 999999999))
     school_name = models.CharField(max_length=100)
     favorite_subject = models.CharField(max_length=50)
     level = models.CharField(max_length=10, null=True, blank=True)

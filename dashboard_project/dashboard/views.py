@@ -388,8 +388,15 @@ def upload_result(request):
     return render(request, 'dashboard/upload_result.html', {'form': form})
 
 def student_results(request, student_id):
+    print("Received student_id:", student_id)  # Debugging
+    if not student_id:
+        return HttpResponse("Invalid student ID", status=400)
     student = get_object_or_404(Student, student_id=student_id)
     results = Result.objects.filter(student=student)
+    
+    if not results.exists():
+        messages.info(request, "You have no results available yet.")
+    
     return render(request, 'dashboard/student_results.html', {'student': student, 'results': results})
 
 
