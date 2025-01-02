@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 import random
+import uuid
 
 # Create your models here.
 class Profile(models.Model):
@@ -31,21 +32,11 @@ class Student(models.Model):
     
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=100, null=True)
-    student_id = models.CharField(max_length=10, unique=True, null=True, blank=True)
-
-    def save(self, *args, **kwargs):
-        # Only assign student_id if it doesn't already have a value (e.g., for new students)
-        if not self.student_id:
-            self.student_id = self.generate_student_id()
-        super().save(*args, **kwargs)
-
-    def generate_student_id(self):
-        # Generate a random 9-digit number as a string
-        return str(random.randint(100000000, 999999999))
+    student_id = models.CharField(max_length=10, null=True, blank=True)
     school_name = models.CharField(max_length=100)
     favorite_subject = models.CharField(max_length=50)
     level = models.CharField(max_length=10, null=True, blank=True)
-    department = models.CharField(max_length=20, unique=True, null=True, blank=True)
+    department = models.CharField(max_length=20, unique=False, null=True, blank=True)
     date_of_birth = models.CharField(max_length=50, null=True, blank=True) 
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, null=True)
     marital_status = models.CharField(max_length=1, choices=MARITAL_STATUS_CHOICES, null=True)
@@ -82,59 +73,7 @@ class Feedback(models.Model):
         return f'{self.user.username} - {self.created_at.strftime("%Y-%m-%d %H:%M:%S")}'  
     
 
-class Payment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    transaction_id = models.CharField(max_length=100, unique=True)
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
-    status = models.CharField(max_length=50)
-    created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        if self.user:
-            return f"{self.user.username} - {self.transaction_id}"
-        else:
-            return f"Unknown User - {self.transaction_id}"
-    
-class Notification(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=255, default='No Title')
-    message = models.TextField()
-    read = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.message
-    
-    
-    
-
-
-# Discussionboard
-class DiscussionBoard(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-
-    def __str__(self):
-        return self.name
-
-class Post(models.Model):
-    discussion_board = models.ForeignKey(DiscussionBoard, on_delete=models.CASCADE)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    content = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.title
-
-class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    content = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"Comment by {self.author} on {self.post}"
     
 class Hostel(models.Model):
     HOSTEL_CHOICES = [
@@ -199,7 +138,7 @@ class Course(models.Model):
         return f"{self.code} - {self.title} ({self.semester}, {self.level})"
 
 class CourseRegistration(models.Model):
-    student = models.ForeignKey('Student', on_delete=models.CASCADE)  # Assuming you have a Student model
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)  # Assuming you have a Student model
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     registered_on = models.DateTimeField(auto_now_add=True)
 
@@ -215,6 +154,7 @@ class AdmissionForm(models.Model):
     phoneNumber = models.CharField(max_length=20)
     guardiansPhoneNumber = models.CharField(max_length=20)
     address = models.TextField()
+    student_id = models.CharField(max_length=10, unique=True, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

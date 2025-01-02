@@ -6,6 +6,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.urls import reverse
 from django.conf import settings
+from django.db import IntegrityError
+
 
 import hashlib
 import hmac
@@ -21,9 +23,6 @@ from django.contrib.auth import authenticate, login
 
 from .models import Profile
 from .models import Student, Result
-from .models import Notification
-from .models import Payment
-from .models import DiscussionBoard, Post, Comment
 from .models import Hostel
 from .models import Feedback
 from .models import Student
@@ -42,8 +41,6 @@ from .forms import RegistrationForm, StudentProfileForm
 from .forms import StudentRegistrationForm
 from .forms import FeedbackForm
 from .forms import StudentUpdateForm
-from .forms import PaymentForm
-from .forms import PostForm, CommentForm
 from .forms import ResultForm
 from .forms import HostelForm
 from .forms import SearchForm
@@ -69,6 +66,8 @@ from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
 
+from django.core.mail import send_mail
+
 
 
 # Create your views here.
@@ -76,18 +75,45 @@ def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         profile_form = StudentProfileForm(request.POST, request.FILES)
+
         if form.is_valid() and profile_form.is_valid():
-            user = form.save(commit=False)
-            user.set_password(form.cleaned_data['password2'])
-            user.save()
-            profile = profile_form.save(commit=False)
-            profile.user = user
-            profile.save()
-            login(request, user)
-            return redirect('login')
+            student_id = form.cleaned_data['student_id']
+
+            if not AdmissionForm.objects.filter(student_id=student_id).exists():
+                messages.error(request, 'Invalid Student ID.')
+                return render(request, 'dashboard/register.html', {
+                    'form': form,
+                    'profile_form': profile_form
+                })
+
+            try:
+                user = form.save(commit=False)
+                user.set_password(form.cleaned_data['password2'])
+                user.save()
+
+                profile = profile_form.save(commit=False)
+                profile.user = user
+                profile.student_id = student_id
+                profile.save()
+
+                login(request, user)
+                messages.success(request, 'Registration successful. You are now logged in!')
+                return redirect('dashboard')  # Redirect to dashboard after successful registration
+
+            except IntegrityError:
+                # Handle the case where the user already exists
+                return render(request, 'dashboard/custom_error.html', {
+                    'error_message': 'An account with this Student ID already exists.',
+                    'login_url': 'login',
+                    'register_url': 'register'
+                }, status=400)
+
+        else:
+            messages.error(request, 'There was an error with your registration. Please check the form and try again.')
     else:
         form = RegistrationForm()
         profile_form = StudentProfileForm()
+
     return render(request, 'dashboard/register.html', {
         'form': form,
         'profile_form': profile_form
@@ -206,174 +232,21 @@ def student_subject_view (request):
     favourite_subject = Student.objects.get('favourite_subject')
     return render(request, 'dashboard/profile.html', {'favourite_subject' : favourite_subject})
 
-# paystack = Paystack(secret_key=settings.PAYSTACK_SECRET_KEY)
 
-logger = logging.getLogger(__name__)
-@csrf_exempt
-# processpayment
-def initiate_payment(request):
-    if not request.user.is_authenticated:
-        return redirect('login')  # Ensure user is logged in
-    
-    student = Student.objects.get(user=request.user)
-
-    if request.method == 'POST':
-        form = PaymentForm(request.POST)
-        if form.is_valid():
-            amount = form.cleaned_data['amount']
-            description = form.cleaned_data['description']
-            description_name = form.cleaned_data['description_name']
-            transaction_id = str(uuid.uuid4())
-            email = request.user.email
-
-            # Save the initial payment record
-            payment = Payment.objects.create(
-                user=request.user,
-                transaction_id=transaction_id,
-                amount=amount,
-                status='Pending'
-            )
-
-            # Initialize Paystack transaction
-            response = Transaction.initialize(
-                reference=transaction_id,
-                amount=int(amount * 100),  # Convert to kobo
-                email=email,
-                callback_url=request.build_absolute_uri('/payment-callback/'),
-                metadata={
-                    "description": description,
-                    "description_name": description_name
-                }
-            )
-
-            if response['status']:
-                return redirect(response['data']['authorization_url'])
-            else:
-                return render(request, 'dashboard/payment_error.html', {'message': 'Failed to initiate payment with Paystack. Please try again later.'})
-    else:
-        form = PaymentForm()
-    return render(request, 'dashboard/initiate_payment.html', {'form': form, 'student': student})
-
-
-
-@csrf_exempt
-def payment_callback(request):
-    if request.method == 'POST':
-        payload = json.loads(request.body)
-        transaction_id = payload['data']['reference']
-        status = payload['data']['status']
-
-        payment = Payment.objects.get(transaction_id=transaction_id)
-        payment.status = status
-        payment.save()
-
-        if status == 'success':
-            # Handle successful payment
-            pass
-        elif status == 'failed':
-            # Handle failed payment
-            pass
-
-        return JsonResponse({'status': 'success'}, status=200)
-
-    return JsonResponse({'status': 'error'}, status=400)
 
 def redirect_url(request):
     student = Student.objects.get(user=request.user)
     return render(request, "dashboard/redirectpage.html", {'student' : student})
 
-#notifications
-def notifications(request):
-    user = request.user
-    notifications = Notification.objects.filter(user=user).order_by('-created_at')
-    unread_count = notifications.filter(read=False).count()
-    context = {
-        "notifications": notifications,
-        "unread_count": unread_count
-    }
-    return render(request, "dashboard/notifications.html", context)
 
-def unread_notifications(request):
-    unread_notifications = Notification.objects.filter(read=False)
-    context = {'unread_notifications': unread_notifications}
-    return render(request, 'dashboard/notifications.html', context)
 
-def mark_as_read(request, notification_id):
-    notification = Notification.objects.get(id=notification_id, user=request.user)
-    notification.read = True
-    notification.save()
-    return redirect("notifications")
-
-def get_unread_notification_count(request):
-    unread_count = Notification.objects.filter(user=request.user, read=False).count()
-    return JsonResponse({'unread_count': unread_count})
 
 
 # Only allow admin users to access this view
 def admin_required(user):
     return user.is_superuser
 
-@login_required
-# @user_passes_test(is_admin)
-def send_notification(request):
-    if request.method == "POST":
-        title = request.POST.get("title")
-        message = request.POST.get("message")
-        users = User.objects.all()
-        for user in users:
-            Notification.objects.create(user=user, title=title, message=message)
-        return redirect("notifications")
 
-    return render(request, "dashboard/send_notification.html")
-
-
-
-
-# discussionviews
-def discussion_board_list(request):
-    boards = DiscussionBoard.objects.all()
-    return render(request, 'dashboard/discussion_board_list.html', {'boards': boards})
-
-def discussion_board_detail(request, pk):
-    board = get_object_or_404(DiscussionBoard, pk=pk)
-    posts = Post.objects.filter(discussion_board=board)
-    return render(request, 'dashboard/discussion_board_detail.html', {'board': board, 'posts': posts})
-
-def post_detail(request, board_pk, post_pk):
-    post = get_object_or_404(Post, pk=post_pk, discussion_board_id=board_pk)
-    comments = Comment.objects.filter(post=post)
-    
-    if request.method == 'POST':
-        comment_form = CommentForm(request.POST)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.author = request.user
-            comment.post = post
-            comment.save()
-            return redirect('dashboard/post_detail', board_pk=board_pk, post_pk=post_pk)
-    else:
-        comment_form = CommentForm()
-
-    return render(request, 'dashboard/post_detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form})
-
-def new_post(request, board_pk):
-    board = get_object_or_404(DiscussionBoard, pk=board_pk)
-    if request.method == 'POST':
-        form = PostForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.discussion_board = board
-            post.save()
-            return redirect('discussion_board_detail', pk=board_pk)
-    else:
-        form = PostForm()
-    return render(request, 'dashboard/new_post.html', {'form': form})
-
-
-# chat
-def chat(request):
-    return render(request, 'dashboard/chat.html')
 
 
 
@@ -533,3 +406,20 @@ def submit_admission_form(request):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+def submit_admission_form(request):
+    serializer = AdmissionFormSerializer(data=request.data)
+    if serializer.is_valid():
+        admission_form = serializer.save()
+
+        # Send email with student_id
+        send_mail(
+            subject="Your Student ID",
+            message=f"Dear {admission_form.name},\n\nYour student ID is: {admission_form.student_id}",
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[admission_form.email],
+            fail_silently=False,
+        )
+        return Response({"message": "Form submitted successfully!"}, status=201)
+    return Response(serializer.errors, status=400)

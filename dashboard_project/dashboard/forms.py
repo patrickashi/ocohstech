@@ -4,11 +4,10 @@ from django.contrib.auth.models import User
 from .models import Student
 from .models import Profile
 from .models import Feedback
-from .models import Payment
-from .models import Post, Comment
 from .models import Result
 from .models import Hostel
 from .models import Course
+from .models import AdmissionForm 
 
 
 # class RegistrationForm(UserCreationForm):
@@ -25,6 +24,7 @@ class RegistrationForm(forms.Form):
     email = forms.EmailField()
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput)
+    student_id = forms.CharField(max_length=8, min_length=8, required=True)
 
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -37,6 +37,13 @@ class RegistrationForm(forms.Form):
         if User.objects.filter(email=email).exists():
             raise forms.ValidationError('This email address is already registered.')
         return email
+
+    def clean_student_id(self):
+        student_id = self.cleaned_data['student_id']
+        # Check if the student_id exists in the AdmissionForm model
+        if not AdmissionForm.objects.filter(student_id=student_id).exists():
+            raise forms.ValidationError('Invalid Student ID.')
+        return student_id
 
     def clean(self):
         cleaned_data = super().clean()
@@ -52,13 +59,37 @@ class RegistrationForm(forms.Form):
         last_name = self.cleaned_data['last_name']
         email = self.cleaned_data['email']
         password = self.cleaned_data['password1']
+        student_id = self.cleaned_data['student_id']
 
+        # Create the user with the provided username and password
         user = User.objects.create_user(username=username, email=email, password=password)
         user.first_name = first_name
         user.last_name = last_name
 
         if commit:
             user.save()
+
+        # After user is created, associate the student with the AdmissionForm using the student_id
+        try:
+            # Get the corresponding AdmissionForm based on the student_id
+            admission_form = AdmissionForm.objects.get(student_id=student_id)
+
+            # Check if Student exists for this user, if not create a new one without the student_id
+            student, created = Student.objects.get_or_create(
+                user=user,  # Link the user to the student model
+                defaults={
+                    'name': first_name + " " + last_name,  # Full name
+                    'email': email,
+                    # Include other fields from the AdmissionForm or form as needed
+                }
+            )
+
+            if not created:
+                print(f"Student for user {username} already exists.")
+            else:
+                print(f"Student for user {username} has been created.")
+        except AdmissionForm.DoesNotExist:
+            raise forms.ValidationError('No matching Admission Form found for this Student ID.')
 
         return user
         
@@ -100,16 +131,6 @@ class PaymentForm(forms.Form):
     description_name = forms.CharField(max_length=255)
         
         
-# Disscussionforms     
-class PostForm(forms.ModelForm):
-    class Meta:
-        model = Post
-        fields = ['title', 'content']
-
-class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        fields = ['content']
         
 class ResultForm(forms.ModelForm):
     class Meta:

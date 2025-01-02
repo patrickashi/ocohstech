@@ -25,7 +25,7 @@
         
 
         <div class="flex justify-start ml-4 md:ml-10  cursor-pointer">
-            <img src="{% static 'images/ocohstechlogo.png' %}" alt="logo" class="w-20">
+            <img src="{% static 'images/old_school_logo.png' %}" alt="logo" class="w-20">
         </div>
     
      <ul class="flex flex-col pl-4 md:pl-10 text-center items-start mt-4">
@@ -71,17 +71,6 @@
             </a>
         </li>
 
-        <!-- <li class="my-4">
-            <a class=" hover:font-semibold duration-200" href="{% url 'discussion_board_list' %} ">Discussion boards</a>
-        </li>
-
-        <li class="my-4 ">
-            <a class="hover:font-semibold duration-200" href="{% url 'chat' %}">Community</a>
-        </li> -->
-
-        <!-- <li>
-            <a href="{% url 'upload_result' %}" class="text-blue-500 hover:text-blue-700">Upload Result</a>
-        </li> -->
 
         <li class="my-2">
             <a href="{% url 'student_results' student_id=request.user.student.student_id %}" class="hover:font-semibold duration-200 flex justify-center items-center">
@@ -128,8 +117,8 @@
     <div id="container" class="container px-4 pt-4 bg-emerald-50 overflow-scroll">
         <div class="border-b mb-2">
             <marquee class="">
-                <p class="text-xs text-yellow-400">The VC calls for a brief meeting with 200 level students around 10am tommorow at the School's center hall >>>>>>>>>>
-                    results for 100lv are now available >>>>>>>>>> results for 300 level is now available.
+                <p class="text-xs text-gray-900">welcome >>>>>>>>>>
+                    to your student portal >>>>>>>>>> 
                 </p>
             </marquee>
         </div>
@@ -213,30 +202,6 @@
             });
         });
 
-
-        // notifications script
-        document.addEventListener("DOMContentLoaded", function () {
-            function fetchUnreadNotifications() {
-                fetch('{% url "unread_notification_count" %}')
-                    .then(response => response.json())
-                    .then(data => {
-                        const badge = document.getElementById('notification-badge');
-                        if (data.unread_count > 0) {
-                            badge.style.display = 'inline';
-                            badge.textContent = data.unread_count;
-                        } else {
-                            badge.style.display = 'none';
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error fetching unread notifications:', error);
-                    });
-            }
-
-            setInterval(fetchUnreadNotifications, 5000); // Check every 5 seconds
-            fetchUnreadNotifications(); // Initial check
-        });
-        
 
     </script>
 
