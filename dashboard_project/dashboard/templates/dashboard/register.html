@@ -13,13 +13,13 @@
 <body>
     <div class="flex justify-center">
 
-        <div class=" px-4 mt-10 shadow-md rounded-lg bg-emerald-50">
+        <div class=" px-4 mt-10 shadow-md mx-2 rounded-lg bg-emerald-50">
             <div class="text-center flex mt-10 justify-center align-middle">
                 <img src="{% static 'images/old_school_logo.png' %}" alt="db" class="w-20 mb-4 mr-2 ml-4 text-gray-200" width="25px">
             </div>
             <p class="pb-2 text-center my-4 text-xs font-thin">NB:Update your profile to complete registration</p>
             
-            <form method="post" enctype="multipart/form-data" class="max-w-sm">
+            <form method="post" enctype="multipart/form-data" class="">
                 {% csrf_token %}
                 {{ form.as_p }}
                 {{ profile_form.as_p }}

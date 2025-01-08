@@ -154,7 +154,7 @@ class AdmissionForm(models.Model):
     phoneNumber = models.CharField(max_length=20)
     guardiansPhoneNumber = models.CharField(max_length=20)
     address = models.TextField()
-    student_id = models.CharField(max_length=10, unique=True, null=True, blank=True)
+    reg_number = models.CharField(max_length=10, unique=True, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

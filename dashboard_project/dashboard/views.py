@@ -64,7 +64,9 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph
-from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Table, TableStyle, Spacer
+from reportlab.lib.enums import TA_CENTER
 
 from django.core.mail import send_mail
 
@@ -77,10 +79,11 @@ def register(request):
         profile_form = StudentProfileForm(request.POST, request.FILES)
 
         if form.is_valid() and profile_form.is_valid():
-            student_id = form.cleaned_data['student_id']
+            reg_number = form.cleaned_data['reg_number']
 
-            if not AdmissionForm.objects.filter(student_id=student_id).exists():
-                messages.error(request, 'Invalid Student ID.')
+            # Check if the registration number exists in the AdmissionForm
+            if not AdmissionForm.objects.filter(reg_number=reg_number).exists():
+                messages.error(request, 'Invalid Reg Number.')
                 return render(request, 'dashboard/register.html', {
                     'form': form,
                     'profile_form': profile_form
@@ -91,11 +94,22 @@ def register(request):
                 user.set_password(form.cleaned_data['password2'])
                 user.save()
 
+                # Save the student profile
                 profile = profile_form.save(commit=False)
                 profile.user = user
-                profile.student_id = student_id
+                profile.student_id = reg_number
                 profile.save()
 
+                # Check if student_id exists after saving the profile
+                if not profile.student_id:
+                    # If student_id is missing, redirect to the custom error page
+                    return render(request, 'dashboard/missing_student_id.html', {
+                        'error_message': 'You need to complete your profile before accessing student results.',
+                        'login_url': 'login',
+                        'register_url': 'register'
+                    }, status=400)
+
+                # Log the user in after successful registration
                 login(request, user)
                 messages.success(request, 'Registration successful. You are now logged in!')
                 return redirect('dashboard')  # Redirect to dashboard after successful registration
@@ -279,6 +293,9 @@ def download_results(request, student_id):
     # Get the first name from the associated User object
     first_name = student.user.first_name
 
+    # Define the academic year
+    academic_year = "Academic Year 2024/2025"
+
     # Create PDF response
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = f'attachment; filename="{first_name}_results.pdf"'
@@ -287,9 +304,23 @@ def download_results(request, student_id):
     doc = SimpleDocTemplate(response, pagesize=letter)
     elements = []
 
-    # Title
+    # Title: Student's name
     title = f"Results for {first_name}"
-    elements.append(Paragraph(title, getSampleStyleSheet()['Title']))
+    styles = getSampleStyleSheet()
+    title_style = styles['Title']
+
+    # Academic year (center-aligned)
+    academic_year_style = ParagraphStyle(
+        'AcademicYear',
+        parent=styles['Normal'],
+        alignment=1,  # Center alignment
+        fontSize=12,
+        spaceAfter=10,
+    )
+
+    elements.append(Paragraph(title, title_style))
+    elements.append(Paragraph(academic_year, academic_year_style))
+    elements.append(Spacer(1, 20))  # Add space between the academic year and the table
 
     # Table data
     data = [['Semester', 'Code', 'Load', 'Title', 'Grade']]
@@ -306,7 +337,7 @@ def download_results(request, student_id):
         ('FONTSIZE', (0, 0), (-1, 0), 12),
         ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
         ('BACKGROUND', (0, 1), (-1, -1), colors.white),
-        ('GRID', (0, 0), (-1, -1), 1, colors.black),
+        ('GRID', (0, 0), (-1, -1), 0.5, colors.lightgrey),  # Lighter border
     ]))
 
     elements.append(table)
@@ -413,10 +444,10 @@ def submit_admission_form(request):
     if serializer.is_valid():
         admission_form = serializer.save()
 
-        # Send email with student_id
+        # Send email with reg number
         send_mail(
-            subject="Your Student ID",
-            message=f"Dear {admission_form.name},\n\nYour student ID is: {admission_form.student_id}",
+            subject="Your Registration Number",
+            message=f"Dear {admission_form.name},\n\nYour Registration Number is: {admission_form.reg_number}",
             from_email=settings.DEFAULT_FROM_EMAIL,
             recipient_list=[admission_form.email],
             fail_silently=False,

@@ -24,7 +24,7 @@ class RegistrationForm(forms.Form):
     email = forms.EmailField()
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput)
-    student_id = forms.CharField(max_length=8, min_length=8, required=True)
+    reg_number = forms.CharField(max_length=8, min_length=8, required=True)
 
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -38,12 +38,12 @@ class RegistrationForm(forms.Form):
             raise forms.ValidationError('This email address is already registered.')
         return email
 
-    def clean_student_id(self):
-        student_id = self.cleaned_data['student_id']
-        # Check if the student_id exists in the AdmissionForm model
-        if not AdmissionForm.objects.filter(student_id=student_id).exists():
-            raise forms.ValidationError('Invalid Student ID.')
-        return student_id
+    def clean_reg_number(self):
+        reg_number = self.cleaned_data['reg_number']
+        # Check if the reg number exists in the AdmissionForm model
+        if not AdmissionForm.objects.filter(reg_number=reg_number).exists():
+            raise forms.ValidationError('Invalid Reg number.')
+        return reg_number
 
     def clean(self):
         cleaned_data = super().clean()
@@ -59,7 +59,7 @@ class RegistrationForm(forms.Form):
         last_name = self.cleaned_data['last_name']
         email = self.cleaned_data['email']
         password = self.cleaned_data['password1']
-        student_id = self.cleaned_data['student_id']
+        reg_number = self.cleaned_data['reg_number']
 
         # Create the user with the provided username and password
         user = User.objects.create_user(username=username, email=email, password=password)
@@ -69,12 +69,12 @@ class RegistrationForm(forms.Form):
         if commit:
             user.save()
 
-        # After user is created, associate the student with the AdmissionForm using the student_id
+        # After user is created, associate the student with the AdmissionForm using the reg number
         try:
             # Get the corresponding AdmissionForm based on the student_id
-            admission_form = AdmissionForm.objects.get(student_id=student_id)
+            admission_form = AdmissionForm.objects.get(reg_number=reg_number)
 
-            # Check if Student exists for this user, if not create a new one without the student_id
+            # Check if Student exists for this user, if not create a new one without the reg_number
             student, created = Student.objects.get_or_create(
                 user=user,  # Link the user to the student model
                 defaults={
@@ -89,7 +89,7 @@ class RegistrationForm(forms.Form):
             else:
                 print(f"Student for user {username} has been created.")
         except AdmissionForm.DoesNotExist:
-            raise forms.ValidationError('No matching Admission Form found for this Student ID.')
+            raise forms.ValidationError('No matching Admission Form found for this reg number.')
 
         return user
         
@@ -109,7 +109,7 @@ class StudentProfileForm(forms.ModelForm):
 class StudentUpdateForm(forms.ModelForm):
     class Meta:
         model = Student
-        fields = ['name', 'school_name', 'favorite_subject', 'date_of_birth', 'gender', 'marital_status', 'nationality', 'state_of_origin',
+        fields = ['name', 'student_id', 'school_name', 'favorite_subject', 'date_of_birth', 'gender', 'marital_status', 'nationality', 'state_of_origin',
                   'lga', 'phone_number', 'email', 'address', 'profile_photo', 'level', 'department']
         
         

@@ -72,11 +72,19 @@
         </li>
 
 
+
         <li class="my-2">
-            <a href="{% url 'student_results' student_id=request.user.student.student_id %}" class="hover:font-semibold duration-200 flex justify-center items-center">
-                <img src="{% static 'images/result_icon.png' %}" alt="rst" class="w-3 h-3 mr-2" width="30px">
-                Results
-            </a>
+            {% if request.user.student.student_id %}
+                <a href="{% url 'student_results' student_id=request.user.student.student_id %}" class="hover:font-semibold duration-200 flex justify-center items-center">
+                    <img src="{% static 'images/result_icon.png' %}" alt="rst" class="w-3 h-3 mr-2" width="30px">
+                    Results
+                </a>
+            {% else %}
+                <a href="{% url 'update_profile' %}" class="hover:font-semibold duration-200 flex justify-center items-center">
+                    <img src="{% static 'images/result_icon.png' %}" alt="rst" class="w-3 h-3 mr-2" width="30px">
+                    Results(edit)
+                </a>
+            {% endif %}
         </li>
 
         

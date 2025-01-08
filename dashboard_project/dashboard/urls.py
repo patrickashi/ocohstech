@@ -44,6 +44,8 @@ urlpatterns = [
     path('summary/', views.registration_summary, name='registration_summary'),
 
     path('api/submit-admission-form/', views.submit_admission_form, name='submit_admission_form'),
+
+    path('missing-student-id/', views.register, name='missing_student_id'),
 ]
 
 
