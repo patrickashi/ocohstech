@@ -1,1 +1,1 @@
-web: gunicorn dashboard_project.wsgi:application
+gunicorn dashboard_project.wsgi:application --bind 0.0.0.0:8000
