@@ -117,24 +117,22 @@ CHANNEL_LAYERS = {
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-DATABASE_URL = os.getenv('DATABASE_URL')
+# DATABASE_URL = os.getenv('DATABASE_URL')
 
-DATABASE_URL = 'postgresql://postgres:qjSNQQfEgruQxAoccMRddwcCtOjOQyek@postgres.railway.internal:5432/railway'
+# DATABASE_URL = 'postgresql://postgres:qjSNQQfEgruQxAoccMRddwcCtOjOQyek@postgres.railway.internal:5432/railway'
 
-url = urlparse(DATABASE_URL) 
+# url = urlparse(DATABASE_URL) 
 
-if DATABASE_URL:
-    url = urlparse(DATABASE_URL)
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': url.path[1:],  # Exclude the initial slash
-            'USER': url.username,
-            'PASSWORD': url.password,
-            'HOST': url.hostname,
-            'PORT': url.port or '5432',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',  # Replace with your database name
+        'USER': 'postgres',       # Replace with your database username
+        'PASSWORD': 'qjSNQQfEgruQxAoccMRddwcCtOjOQyek',   # Replace with your database password
+        'HOST': 'postgres.railway.internal',  # Use the host provided by Railway
+        'PORT': '5432',                # Default PostgreSQL port
     }
+}
 
 
 
