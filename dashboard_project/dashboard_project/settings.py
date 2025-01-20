@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'channels',
     'rest_framework',
-    'dashboard',
 ]
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
@@ -119,6 +118,10 @@ CHANNEL_LAYERS = {
 #     }
 # }
 DATABASE_URL = os.getenv('DATABASE_URL')
+
+DATABASE_URL = 'postgresql://postgres:qjSNQQfEgruQxAoccMRddwcCtOjOQyek@postgres.railway.internal:5432/railway'
+
+url = urlparse(DATABASE_URL) 
 
 if DATABASE_URL:
     url = urlparse(DATABASE_URL)
