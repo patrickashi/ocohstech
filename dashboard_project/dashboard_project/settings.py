@@ -1,5 +1,5 @@
 import os
-
+import sys
 from pathlib import Path
 from corsheaders.defaults import default_headers
 
@@ -8,7 +8,7 @@ from dj_database_url import parse as dburl
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+sys.path.append(os.path.join(os.path.dirname(__file__), 'dashboard_project'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -41,6 +41,7 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
     ],
 }
+
 
 
 
