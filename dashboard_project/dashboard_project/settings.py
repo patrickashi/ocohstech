@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'channels',
     'rest_framework',
+    'dashboard',
 ]
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
