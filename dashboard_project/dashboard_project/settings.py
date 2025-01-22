@@ -4,6 +4,7 @@ from pathlib import Path
 from corsheaders.defaults import default_headers
 
 from dj_database_url import parse as dburl
+import dj_database_url
 from urllib.parse import urlparse
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -123,16 +124,23 @@ CHANNEL_LAYERS = {
 
 # url = urlparse(DATABASE_URL) 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',  # Replace with your database name
+#         'USER': 'postgres',  # Replace with your database username
+#         'PASSWORD': 'qjSNQQfEgruQxAoccMRddwcCtOjOQyek',  # Replace with your database password
+#         'HOST': 'monorail.proxy.rlwy.net',  # Hostname only
+#         'PORT': '5432',  # Default PostgreSQL port (or the one provided by Railway)
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',  # Replace with your database name
-        'USER': 'postgres',       # Replace with your database username
-        'PASSWORD': 'qjSNQQfEgruQxAoccMRddwcCtOjOQyek',   # Replace with your database password
-        'HOST': 'postgres.railway.internal',  # Use the host provided by Railway
-        'PORT': '5432',                # Default PostgreSQL port
-    }
+    'default': dj_database_url.config(
+        default="postgresql://postgres:qjSNQQfEgruQxAoccMRddwcCtOjOQyek@monorail.proxy.rlwy.net:40673/railway"
+    )
 }
+
 
 
 
