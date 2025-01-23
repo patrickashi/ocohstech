@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Search Results for "{{ query }}"</h2>
+
+    <h3>Students</h3>
+    <ul>
+    {% for student in student %}
+        <li>{{ student.name }} - {{ student.department }}</li>
+    {% empty %}
+        <li>No students found.</li>
+    {% endfor %}
+    </ul>
+
+    <h3>Courses</h3>
+    <ul>
+    {% for course in courses %}
+        <li>{{ course.course_name }} - {{ course.course_code }}</li>
+    {% empty %}
+        <li>No courses found.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

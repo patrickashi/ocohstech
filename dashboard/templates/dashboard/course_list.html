@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="bg-white py-4 px-4 rounded-md">
+    <h2 class="mb-6">Courses</h2>
+    <h2 class="mb-6"></h2>
+    <form method="POST">
+        {% csrf_token %}
+        <ul>
+            {% for course in courses %}
+                <li>
+                    <label>
+                        <input type="checkbox" name="courses" value="{{ course.id }}">
+                        {{ course.name }} ({{ course.code }})
+                    </label>
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit" class="mt-6">Register Selected Courses</button>
+    </form>
+</div>
+{% endblock %}
+
+
