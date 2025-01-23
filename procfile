@@ -1,1 +1,1 @@
-web: PYTHONPATH=dashboard_project gunicorn dashboard_project.wsgi:application --bind 0.0.0.0:$PORT
+web: PYTHONPATH=ocohtstech.dashboard_project gunicorn ocohtstech.dashboard_project.dashboard_project.wsgi:application --bind 0.0.0.0:$PORT
