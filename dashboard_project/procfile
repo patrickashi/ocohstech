@@ -1,1 +1,0 @@
-web: PYTHONPATH=dashboard_project gunicorn dashboard_project.wsgi:application --bind 0.0.0.0:$PORT

@@ -11,7 +11,7 @@ application = get_asgi_application()
 
 from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.auth import AuthMiddlewareStack
-from your_app_name.routing import websocket_urlpatterns
+from dashboard_project.routing import websocket_urlpatterns
 from channels.security.websocket import AllowedHostsOriginValidator
 from dashboard import routing
 
