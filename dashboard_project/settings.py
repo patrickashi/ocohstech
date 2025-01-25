@@ -113,12 +113,13 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
 # DATABASE_URL = os.getenv('DATABASE_URL')
 
 # DATABASE_URL = 'postgresql://postgres:qjSNQQfEgruQxAoccMRddwcCtOjOQyek@postgres.railway.internal:5432/railway'
@@ -136,11 +137,11 @@ CHANNEL_LAYERS = {
 #     }
 # }
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default="postgresql://postgres:qjSNQQfEgruQxAoccMRddwcCtOjOQyek@monorail.proxy.rlwy.net:40673/railway"
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default="postgresql://postgres:qjSNQQfEgruQxAoccMRddwcCtOjOQyek@monorail.proxy.rlwy.net:40673/railway"
+#     )
+# }
 
 
 
