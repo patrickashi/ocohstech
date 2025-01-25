@@ -19,7 +19,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'dashboard_project'))
 SECRET_KEY = 'django-insecure-it@6n&vxwrw(irst+)7@o-uxrs+er6ctho0*pn=7-&36@mb&j*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
