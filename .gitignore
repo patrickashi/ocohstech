@@ -13,7 +13,6 @@ __pycache__/
 *.pyc
 *.env
 media/
-static/
 
 node_modules/
 
