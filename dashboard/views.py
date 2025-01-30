@@ -112,6 +112,17 @@ def register(request):
                 # Log the user in after successful registration
                 login(request, user)
                 messages.success(request, 'Registration successful. You are now logged in!')
+                # Send congratulatory email
+                send_mail(
+                    subject='Welcome to Our Student Portal!',
+                    message=f'Hi {user.first_name},\n\n'
+                            f'Congratulations! Your registration was successful. '
+                            f'You can now access your student dashboard.\n\n'
+                            f'Best regards,\nThe School Admin Team',
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[user.email],
+                    fail_silently=False,
+                )
                 return redirect('dashboard')  # Redirect to dashboard after successful registration
 
             except IntegrityError:
