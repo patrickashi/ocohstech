@@ -19,7 +19,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'dashboard_project'))
 SECRET_KEY = 'django-insecure-it@6n&vxwrw(irst+)7@o-uxrs+er6ctho0*pn=7-&36@mb&j*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -261,6 +261,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'patrickpeko1@gmail.com'
-EMAIL_HOST_PASSWORD = 'quvg axcv kxct yieo'
-DEFAULT_FROM_EMAIL = 'patrickpeko1@gmail.com'
+EMAIL_HOST_USER = 'ocohstech@gmail.com'
+EMAIL_HOST_PASSWORD = 'gwct nnkz yksg jrgm'
+DEFAULT_FROM_EMAIL = 'ocohstech@gmail.com'
