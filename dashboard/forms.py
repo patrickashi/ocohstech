@@ -8,6 +8,7 @@ from .models import Result
 from .models import Hostel
 from .models import Course
 from .models import AdmissionForm 
+from .models import ReceiptUpload
 
 
 # class RegistrationForm(UserCreationForm):
@@ -158,3 +159,23 @@ class CourseRegistrationForm(forms.Form):
         level = kwargs.pop('level')  # Extract level from kwargs
         super().__init__(*args, **kwargs)
         self.fields['courses'].queryset = Course.objects.filter(level=level)  # Filter queryset based on level
+
+class ReceiptUploadForm(forms.ModelForm):
+    class Meta:
+        model = ReceiptUpload
+        fields = ['receipt']
+
+    def clean_receipt(self):
+        file = self.cleaned_data.get('receipt')
+
+        if file:
+            # Ensure file size is less than 1MB
+            if file.size > 1 * 1024 * 1024:  # 1MB limit
+                raise forms.ValidationError("File size must not exceed 1MB.")
+            
+            # Allow only specific formats
+            allowed_formats = ['application/pdf', 'image/jpeg', 'image/png']
+            if file.content_type not in allowed_formats:
+                raise forms.ValidationError("Only PDF, JPG, and PNG files are allowed.")
+
+        return file

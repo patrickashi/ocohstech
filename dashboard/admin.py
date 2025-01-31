@@ -7,6 +7,7 @@ from .models import Result
 from .models import Hostel
 from .models import Course, CourseRegistration
 from .models import AdmissionForm
+from .models import ReceiptUpload
 
 
 
@@ -19,5 +20,7 @@ admin.site.register(Hostel)
 admin.site.register(Course)
 admin.site.register(CourseRegistration)
 admin.site.register(AdmissionForm)
+admin.site.register(ReceiptUpload)
+
 #unregister groups
 admin.site.unregister(Group)

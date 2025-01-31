@@ -160,4 +160,10 @@ class AdmissionForm(models.Model):
     def __str__(self):
         return self.name
     
-    
+class ReceiptUpload(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Link to student
+    receipt = models.FileField(upload_to='receipts/', max_length=255)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Receipt uploaded by {self.user.username}"

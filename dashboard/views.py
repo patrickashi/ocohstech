@@ -28,6 +28,7 @@ from .models import Feedback
 from .models import Student
 from .models import Course, CourseRegistration
 from .models import AdmissionForm
+from .models import ReceiptUpload
 
 
 from .serializers import AdmissionFormSerializer
@@ -45,6 +46,7 @@ from .forms import ResultForm
 from .forms import HostelForm
 from .forms import SearchForm
 from .forms import CourseRegistrationForm
+from .forms import ReceiptUploadForm
 
 import csv
 
@@ -80,6 +82,9 @@ def register(request):
 
         if form.is_valid() and profile_form.is_valid():
             reg_number = form.cleaned_data['reg_number']
+            email = form.cleaned_data.get('email', None)
+            first_name = form.cleaned_data.get('first_name', '')
+            last_name = form.cleaned_data.get('last_name', '')
 
             # Check if the registration number exists in the AdmissionForm
             if not AdmissionForm.objects.filter(reg_number=reg_number).exists():
@@ -112,17 +117,23 @@ def register(request):
                 # Log the user in after successful registration
                 login(request, user)
                 messages.success(request, 'Registration successful. You are now logged in!')
-                # Send congratulatory email
-                send_mail(
-                    subject='Welcome to Our Student Portal!',
-                    message=f'Hi {user.first_name},\n\n'
-                            f'Congratulations! Your registration was successful. '
-                            f'You can now access your student dashboard.\n\n'
-                            f'Best regards,\nThe School Admin Team',
-                    from_email=settings.EMAIL_HOST_USER,
-                    recipient_list=[user.email],
-                    fail_silently=False,
-                )
+                # Send email notification to admin
+                if email:
+                    try:
+                        send_mail(
+                            subject='Welcome to Our Student Portal!',
+                            message=f"Dear {first_name},\n\n"
+                                    f"Congratulations! Your registration was successful.\n"
+                                    f"Your Reg Number: {reg_number}\n\n"
+                                    f"You can now access your student dashboard.\n\n"
+                                    f"Best regards,\nThe School Admin Team",
+                            from_email=settings.EMAIL_HOST_USER,
+                            recipient_list=[email],  # Send to student
+                            fail_silently=False,
+                        )
+                    except Exception as e:
+                        print(f"Student Email Error: {e}")  # Debugging
+
                 return redirect('dashboard')  # Redirect to dashboard after successful registration
 
             except IntegrityError:
@@ -465,3 +476,20 @@ def submit_admission_form(request):
         )
         return Response({"message": "Form submitted successfully!"}, status=201)
     return Response(serializer.errors, status=400)
+
+@login_required
+def upload_receipt(request):
+    if request.method == 'POST':
+        form = ReceiptUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            receipt = form.save(commit=False)
+            receipt.user = request.user
+            receipt.save()
+            messages.success(request, "Receipt uploaded successfully! Kindly proceed to ICT for confirmation")
+            return redirect('upload_receipt')  # Redirect to dashboard after upload
+        else:
+            messages.error(request, "Invalid file. Ensure it's a PDF, JPG, or PNG under 1MB.")
+    else:
+        form = ReceiptUploadForm()
+
+    return render(request, 'dashboard/upload_receipt.html', {'form': form})
