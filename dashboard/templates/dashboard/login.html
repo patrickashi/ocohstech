@@ -27,12 +27,15 @@
                                 <label for="id_username">Username</label>
                                 <input type="text" id="id_username" name="username" class="pl-2 border rounded-md" required autofocus>
                             </div>
-                            <div class=" mt-4">
+                            <div class="mt-4 relative">
                                 <label for="id_password">Password</label>
                                 <input type="password" id="id_password" name="password" class="pl-2 border rounded-md" required>
+                                <button type="button" id="toggle-password" class="absolute right-3 top-10 text-gray-500">
+                                    Show
+                                </button>
                             </div>
                             
-                            <button type="submit" class="mt-4 mb-2 bg-blue-900">Login</button>
+                            <button type="submit" class="mt-4 mb-2 bg-blue-900 text-white p-2 rounded-md w-full">Login</button>
                             <p class="mb-2">New Student? <a href="{% url 'register' %}" class="hover:underline">Register</a> </p>
                             <p class="text-xs"> Forgot your password?<a href="{% url 'password_reset' %}" class="hover:underline" > reset</a></p>
                         </form>
@@ -41,5 +44,17 @@
             </div>
         </div>
     </div>
+
+    <!-- JS for Show/Hide Password Functionality -->
+    <script>
+        // Function to toggle password visibility
+        const togglePassword = document.getElementById("toggle-password");
+        const password = document.getElementById("id_password");
+        togglePassword.addEventListener("click", function() {
+            const type = password.type === "password" ? "text" : "password";
+            password.type = type;
+            this.textContent = password.type === "password" ? "Show" : "Hide"; // Toggle text between "Show" and "Hide"
+        });
+    </script>
 </body>
 </html>

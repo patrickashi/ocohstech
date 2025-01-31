@@ -13,22 +13,84 @@
 <body>
     <div class="flex justify-center mb-10">
 
-        <div class=" px-4 mt-20 mb-20 shadow-md mx-8 rounded-lg bg-emerald-50 w-80">
+        <div class="px-4 mt-20 mb-20 shadow-md mx-8 rounded-lg bg-emerald-50  sm:w-80 sm:mx-4">
             <div class="text-center flex mt-10 justify-center align-middle">
                 <img src="{% static 'images/old_school_logo.png' %}" alt="db" class="w-20 mb-4 mr-2 ml-4 text-gray-200" width="25px">
             </div>
-            <p class="pb-2 text-center my-4 text-xs font-thin">NB:Update your profile to complete registration</p>
+            <p class="pb-2 text-center my-4 text-xs font-thin">NB: Update your profile to complete registration</p>
             
-            <form method="post" enctype="multipart/form-data" class="space-y-6">
+            <form method="post" enctype="multipart/form-data" class="space-y-6 ">
                 {% csrf_token %}
-                {{ form.as_p }}
-                {{ profile_form.as_p }}
-                <!-- {{ student_form.as_p }} -->
-                <button type="submit" class="my-4">Register</button>
-                <p class="mb-4">Old Student? <a href="{% url 'login' %}" class="hover:underline">Login</a></p>
+                
+                <!-- Render Form Fields with proper padding and margin -->
+                <div class="space-y-4">
+                    <div>
+                        <label for="id_username" class="block text-gray-700">Username</label>
+                        {{ form.username }}
+                    </div>
+                    <div>
+                        <label for="id_first_name" class="block text-gray-700">First Name</label>
+                        {{ form.first_name }}
+                    </div>
+                    <div>
+                        <label for="id_last_name" class="block text-gray-700">Last Name</label>
+                        {{ form.last_name }}
+                    </div>
+                    <div>
+                        <label for="id_email" class="block text-gray-700">Email</label>
+                        {{ form.email }}
+                    </div>
+                    <div>
+                        <label for="id_reg_number" class="block text-gray-700">Reg Number</label>
+                        {{ form.reg_number }}
+                    </div>
+
+                    <!-- Password Field with Show/Hide Toggle -->
+                    <div class="relative">
+                        <label for="id_password1" class="text-gray-700">Password</label>
+                        {{ form.password1 }}
+                        <button type="button" id="toggle-password1" class="absolute right-3 top-10 text-gray-500">
+                            Show
+                        </button>
+                    </div>
+
+                    <!-- Confirm Password Field with Show/Hide Toggle -->
+                    <div class="relative">
+                        <label for="id_password2" class="text-gray-700">Confirm Password</label>
+                        {{ form.password2 }}
+                        <button type="button" id="toggle-password2" class="absolute right-3 top-10 text-gray-500">
+                            Show
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="my-4 bg-green-500 text-white p-2 rounded-md w-full">Register</button>
+                <p class="mb-4 text-center">Old Student? <a href="{% url 'login' %}" class="hover:underline">Login</a></p>
             </form>
         </div>
 
     </div>
+
+    <!-- JS for Show/Hide Password Functionality -->
+    <script>
+        // Function to toggle password visibility
+        const togglePassword1 = document.getElementById("toggle-password1");
+        const password1 = document.getElementById("id_password1");
+        togglePassword1.addEventListener("click", function() {
+            const type = password1.type === "password" ? "text" : "password";
+            password1.type = type;
+            this.textContent = password1.type === "password" ? "Show" : "Hide"; // Toggle text between "Show" and "Hide"
+        });
+
+        // Function to toggle confirm password visibility
+        const togglePassword2 = document.getElementById("toggle-password2");
+        const password2 = document.getElementById("id_password2");
+        togglePassword2.addEventListener("click", function() {
+            const type = password2.type === "password" ? "text" : "password";
+            password2.type = type;
+            this.textContent = password2.type === "password" ? "Show" : "Hide"; // Toggle text between "Show" and "Hide"
+        });
+    </script>
 </body>
 </html>
