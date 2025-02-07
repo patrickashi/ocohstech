@@ -1,0 +1,2270 @@
+[
+{
+  "model": "dashboard.course",
+  "pk": 6,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Use of English",
+    "code": "GNS 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 7,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Professional Ethics",
+    "code": "CHE 211",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 8,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Anatomy and Physiology 1",
+    "code": "CHE 212",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 9,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Behaviour Change Communications",
+    "code": "CHE 213",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 10,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Citizenship Education",
+    "code": "GNS 111",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 11,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Human Nutrition",
+    "code": "CHE 214",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 12,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Introduction to Primary Health Care",
+    "code": "CHE 215",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 13,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Introduction to Psychology",
+    "code": "GNS 411",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 14,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Introduction to Environmental Health",
+    "code": "EHT 111",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 15,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Geography",
+    "code": "FOT 111",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 16,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Introduction to Computer",
+    "code": "COM 111",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 17,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Introduction to Medical Sociology",
+    "code": "GNS 213",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 18,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Symptomatology",
+    "code": "CHE 211",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 19,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Population Dynamics and Family Planning",
+    "code": "CHE 222",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 20,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Clinical Skills 1",
+    "code": "CHE 223",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 21,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Science Laboratory Technology",
+    "code": "STB 211",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 22,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Immunity and Immunization",
+    "code": "CHE 224",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 23,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Control of Communicable Diseases",
+    "code": "CHE 225",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 24,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Accident and Emergency",
+    "code": "CHE 226",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 25,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Supervised Clinical Experience 1",
+    "code": "CHE 227",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 26,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Communication in English",
+    "code": "GNS 102",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 27,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Anatomy and Physiology II",
+    "code": "CHE 231",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 28,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Oral Health",
+    "code": "CHE 232",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 29,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Community Mental Health",
+    "code": "CHE 233",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 30,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Productive Health",
+    "code": "CHE 234",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 31,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Child Health",
+    "code": "CHE 235",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 32,
+  "fields": {
+    "department": "communityhealth",
+    "title": "School Health Programme",
+    "code": "CHE 236",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 33,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Control of Non-Communicable Diseases",
+    "code": "CHE 237",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 34,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Introduction to Physical Chemistry",
+    "code": "BCH 111",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 35,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Community Linkages and Development",
+    "code": "CHE 238",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 36,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Care and Management of HIV and AIDS",
+    "code": "CHE 239",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 37,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Occupational Health and Safety",
+    "code": "CHE 240",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 38,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Clinical Skills II",
+    "code": "CHE 241",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 39,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Maternal Health",
+    "code": "CHE 242",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 4
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 40,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Modified Essential Newborn Care",
+    "code": "CHE 243",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 41,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Community Ear, Nose and Throat Care (ENT)",
+    "code": "CHE 244",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 42,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Community Eye Care",
+    "code": "CHE 245",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 43,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Use of Standing Orders",
+    "code": "CHE 246",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 44,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Introduction to Pharmacology",
+    "code": "GNP 123",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 45,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Nigerian Health System",
+    "code": "CHE 247",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 46,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Supervised Clinical Experience II",
+    "code": "CHE 248",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 4
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 47,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Care of the Older Persons",
+    "code": "CHE 251",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 48,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Care of Persons with Special Needs",
+    "code": "CHE 252",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 49,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Heath Statistics",
+    "code": "CHE 253",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 50,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Essential Medicines",
+    "code": "CHE 254",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 51,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Human Resource for Health",
+    "code": "CHE 255",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 52,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Research Methodology",
+    "code": "CHE 256",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 53,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Community Based New born Care",
+    "code": "CHE 257",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 54,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Supervised Community Based Experience (SCBE)",
+    "code": "CHE 258",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 4
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 55,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Primary Health Care Management",
+    "code": "CHE 261",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 56,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Referral System and Outreach Services",
+    "code": "CHE 262",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 57,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Accounting System in Primary Health Care",
+    "code": "CHE 263",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 58,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Health Management Information System",
+    "code": "CHE 264",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 59,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Entrepreneurship Education",
+    "code": "BUS 213",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 60,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Research Project",
+    "code": "CHE 265",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 4
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 61,
+  "fields": {
+    "department": "medlab",
+    "title": "Communication Skills I / Use of English I",
+    "code": "ELS 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 62,
+  "fields": {
+    "department": "medlab",
+    "title": "Introduction to IT I",
+    "code": "CSC 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 63,
+  "fields": {
+    "department": "medlab",
+    "title": "General Chemistry I",
+    "code": "CHM 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 64,
+  "fields": {
+    "department": "medlab",
+    "title": "General Biology I",
+    "code": "BIO 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 65,
+  "fields": {
+    "department": "medlab",
+    "title": "General Physics I",
+    "code": "PHY 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 66,
+  "fields": {
+    "department": "medlab",
+    "title": "Genera Mathematics I",
+    "code": "MTH 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 67,
+  "fields": {
+    "department": "communityhealth",
+    "title": "Citizenship Education",
+    "code": "GST 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 68,
+  "fields": {
+    "department": "medlab",
+    "title": "History and Philosophy of Science",
+    "code": "GST 103",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 69,
+  "fields": {
+    "department": "medlab",
+    "title": "Introduction to Environmental Health",
+    "code": "EHT 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 70,
+  "fields": {
+    "department": "medlab",
+    "title": "Functional French I",
+    "code": "FRN 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 71,
+  "fields": {
+    "department": "medlab",
+    "title": "Communication Skills II / Use of English II",
+    "code": "ELS 102",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 72,
+  "fields": {
+    "department": "medlab",
+    "title": "Introduction to IT II",
+    "code": "CSC 102",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 73,
+  "fields": {
+    "department": "medlab",
+    "title": "General Physics II",
+    "code": "PHY 102",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 74,
+  "fields": {
+    "department": "medlab",
+    "title": "Organic Chemistry",
+    "code": "CHM 102",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 75,
+  "fields": {
+    "department": "medlab",
+    "title": "General Biology II",
+    "code": "BIO 102",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 76,
+  "fields": {
+    "department": "medlab",
+    "title": "General Mathematics II",
+    "code": "MTH 102",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 77,
+  "fields": {
+    "department": "medlab",
+    "title": "First Aid and Primary Health Care",
+    "code": "FAP 102",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 78,
+  "fields": {
+    "department": "medlab",
+    "title": "Philosophy & Logic / Critical Reasoning",
+    "code": "GST 102",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 79,
+  "fields": {
+    "department": "medlab",
+    "title": "Functional French II",
+    "code": "FRN 102",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 80,
+  "fields": {
+    "department": "medlab",
+    "title": "Basic Anatomy",
+    "code": "ANA 201",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 81,
+  "fields": {
+    "department": "medlab",
+    "title": "Basic Physiology",
+    "code": "PHS 201",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 82,
+  "fields": {
+    "department": "medlab",
+    "title": "Basic Biochemistry",
+    "code": "BCH 201",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 83,
+  "fields": {
+    "department": "medlab",
+    "title": "Introduction to MLS",
+    "code": "MLT 201",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 84,
+  "fields": {
+    "department": "medlab",
+    "title": "Introduction to Immunology",
+    "code": "MLT 203",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 85,
+  "fields": {
+    "department": "medlab",
+    "title": "Clinical Laboratory Posting I",
+    "code": "MLT 205",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 86,
+  "fields": {
+    "department": "medlab",
+    "title": "Basic Laboratory Techniques I",
+    "code": "MLT 207",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 87,
+  "fields": {
+    "department": "medlab",
+    "title": "Basic Cytology and Genetics",
+    "code": "BIO 201",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 88,
+  "fields": {
+    "department": "medlab",
+    "title": "Medical Microbiology I",
+    "code": "MLT 202",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 89,
+  "fields": {
+    "department": "medlab",
+    "title": "Haematology I",
+    "code": "MLT 204",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 90,
+  "fields": {
+    "department": "medlab",
+    "title": "Clinical Chemistry I",
+    "code": "MLT 206",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 91,
+  "fields": {
+    "department": "medlab",
+    "title": "Histopathology I",
+    "code": "MLT 206",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 92,
+  "fields": {
+    "department": "medlab",
+    "title": "Research Methodology",
+    "code": "MLT 210",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 93,
+  "fields": {
+    "department": "medlab",
+    "title": "Introduction to Management, Lab Organization & Ethics",
+    "code": "MLT 212",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 94,
+  "fields": {
+    "department": "medlab",
+    "title": "Clinical Laboratory Posting II",
+    "code": "MLT 214",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 95,
+  "fields": {
+    "department": "medlab",
+    "title": "Basic Laboratory Techniques II",
+    "code": "MLT 214",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 96,
+  "fields": {
+    "department": "medlab",
+    "title": "Medical Parasitology",
+    "code": "MLT 301",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 97,
+  "fields": {
+    "department": "medlab",
+    "title": "Blood Transfusion Science",
+    "code": "MLT 303",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 98,
+  "fields": {
+    "department": "medlab",
+    "title": "Clinical Chemistry II",
+    "code": "MLT 305",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 99,
+  "fields": {
+    "department": "medlab",
+    "title": "Histopathology II",
+    "code": "MLT 307",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 100,
+  "fields": {
+    "department": "medlab",
+    "title": "Clinical Laboratory Posting III",
+    "code": "MLT 311",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 101,
+  "fields": {
+    "department": "medlab",
+    "title": "Seminar in Laboratory Science",
+    "code": "MLT 309",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 102,
+  "fields": {
+    "department": "medlab",
+    "title": "Introductory Virology",
+    "code": "MLT 313",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 103,
+  "fields": {
+    "department": "medlab",
+    "title": "Medical Microbiology II",
+    "code": "MLT 302",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 104,
+  "fields": {
+    "department": "medlab",
+    "title": "Haematology II",
+    "code": "MLT 304",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 105,
+  "fields": {
+    "department": "medlab",
+    "title": "Clinical Chemistry III",
+    "code": "MLT 306",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 106,
+  "fields": {
+    "department": "medlab",
+    "title": "Histopathology III",
+    "code": "MLT 308",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 107,
+  "fields": {
+    "department": "medlab",
+    "title": "Research Project",
+    "code": "MLT 312",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 6
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 108,
+  "fields": {
+    "department": "medlab",
+    "title": "Good Laboratory Practice",
+    "code": "MLT 310",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 109,
+  "fields": {
+    "department": "pharmacy",
+    "title": "General Biology I",
+    "code": "BIO 111",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 110,
+  "fields": {
+    "department": "pharmacy",
+    "title": "General Chemistry 1",
+    "code": "CHM 111",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 111,
+  "fields": {
+    "department": "pharmacy",
+    "title": "General Physics 1",
+    "code": "PHY 111",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 112,
+  "fields": {
+    "department": "pharmacy",
+    "title": "General Mathematics 1",
+    "code": "MTH 111",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 113,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Introduction to Computer",
+    "code": "ICT 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 114,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Use of English",
+    "code": "ENG 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 115,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Introduction to Entrepreneurship",
+    "code": "ETP 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 116,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Introduction to Laboratory Techniques",
+    "code": "BDT 151",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 117,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Introduction to Principles of Pharmacy Technician Practice",
+    "code": "PTP 111",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 118,
+  "fields": {
+    "department": "pharmacy",
+    "title": "General Biology II",
+    "code": "BIO 112",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 119,
+  "fields": {
+    "department": "pharmacy",
+    "title": "General Chemistry II (Organic Chemistry)",
+    "code": "CHM 112",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 120,
+  "fields": {
+    "department": "pharmacy",
+    "title": "General Physics II",
+    "code": "PHY 112",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 121,
+  "fields": {
+    "department": "pharmacy",
+    "title": "General Biology Practical",
+    "code": "BIO 112",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 122,
+  "fields": {
+    "department": "pharmacy",
+    "title": "General Chemistry Practical",
+    "code": "CHM 112",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 123,
+  "fields": {
+    "department": "pharmacy",
+    "title": "General Physics Practical",
+    "code": "PHY 122",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 124,
+  "fields": {
+    "department": "pharmacy",
+    "title": "General Mathematics II",
+    "code": "MTH 112",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 125,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Communication Skills",
+    "code": "ENG 102",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 126,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Introduction to Action and Uses of Medicines",
+    "code": "AUM 122",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 127,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Basic Dispensing Theory 1",
+    "code": "BDT 152",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 128,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Basic Microbiology 1",
+    "code": "MCB 112",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 129,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Action and Uses if Medicines I",
+    "code": "AUM 221",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 130,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Basic Dispensing Theory II",
+    "code": "BDT 251",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 131,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Pharmaceutical Calculations",
+    "code": "BDT 253",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 132,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Anatomy and Physiology I",
+    "code": "ANA 241",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 133,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Basic Dispensing Practical I",
+    "code": "BDP 231",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 134,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Primary Health Care I",
+    "code": "PHC 201",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 135,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Introduction to Statistics",
+    "code": "STA 211",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 136,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Basic Microbiology II",
+    "code": "MCB 211",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 137,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Logistics and Supply Chain Management System",
+    "code": "BDT 255",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 138,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Action and Uses of Medicines II",
+    "code": "AUM 222",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 139,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Basic Dispensing Theory III",
+    "code": "BDT 252",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 140,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Basic Dispensing Practical II",
+    "code": "BDP 232",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 141,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Anatomy and Physiology II",
+    "code": "ANA 242",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 142,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Logistics and Supply Chain Management II",
+    "code": "DTT 254",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 143,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Introduction to Psychology",
+    "code": "PSY 202",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 144,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Practice of Entrepreneurship",
+    "code": "ETP 202",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 145,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Hospital/Community and Industrial Practice",
+    "code": "HCP 361",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 6
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 146,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Basic Dispensing Practical III",
+    "code": "BDP 331",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 147,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Basic Dispensing Theory IV",
+    "code": "BDT 351",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 148,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Action and Uses of Medicines III",
+    "code": "AUM 321",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 149,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Computer Application in Pharmacy",
+    "code": "ICT 301",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 150,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Seminar Presentation I",
+    "code": "SEM 301",
+    "semester": "first",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 151,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Anatomy and Physiology III",
+    "code": "ANA 342",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 152,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Primary Health Care II",
+    "code": "PHC 302",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 153,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Principles of Pharmacy Technician Practice II",
+    "code": "PTP 312",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 154,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Action and Uses of Medicines IV",
+    "code": "PCL 322",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 155,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Basic Dispensing Practical IV",
+    "code": "BDP 332",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 156,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Basic Dispensing Theory V",
+    "code": "BDT 352",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 157,
+  "fields": {
+    "department": "pharmacy",
+    "title": "Seminar Presentation II",
+    "code": "SEM 302",
+    "semester": "second",
+    "level": "300lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 158,
+  "fields": {
+    "department": "dot",
+    "title": "Basic Principles of Optic I",
+    "code": "DDO 111",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 159,
+  "fields": {
+    "department": "dot",
+    "title": "Introduction to Microbiology",
+    "code": "DDS 111",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 160,
+  "fields": {
+    "department": "dot",
+    "title": "Basic Mathematics",
+    "code": "DDS 112",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 161,
+  "fields": {
+    "department": "dot",
+    "title": "Introduction to Chemistry",
+    "code": "DDS 113",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 162,
+  "fields": {
+    "department": "dot",
+    "title": "Introduction to concept of Health and Disease",
+    "code": "EHT 112",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 163,
+  "fields": {
+    "department": "dot",
+    "title": "Citizenship Education",
+    "code": "GNS 111",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 164,
+  "fields": {
+    "department": "dot",
+    "title": "Communication in English I",
+    "code": "GNS 102",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 165,
+  "fields": {
+    "department": "dot",
+    "title": "Introduction to Psychology",
+    "code": "GNS 411",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 166,
+  "fields": {
+    "department": "dot",
+    "title": "Introduction to Computer",
+    "code": "COM 101",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 4
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 167,
+  "fields": {
+    "department": "dot",
+    "title": "Principles of Economics I",
+    "code": "BAM 114",
+    "semester": "first",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 168,
+  "fields": {
+    "department": "dot",
+    "title": "Physical Optics I",
+    "code": "DDO 121",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 169,
+  "fields": {
+    "department": "dot",
+    "title": "Introduction to Ocular Anatomy and Physiology",
+    "code": "DDO 122",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 170,
+  "fields": {
+    "department": "dot",
+    "title": "Basic Principles of Optics II",
+    "code": "DDO 123",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 171,
+  "fields": {
+    "department": "dot",
+    "title": "Clinical Optical Dispensing I",
+    "code": "DDO 124",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 172,
+  "fields": {
+    "department": "dot",
+    "title": "Ophthalmic Instrumentation",
+    "code": "DDO 125",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 173,
+  "fields": {
+    "department": "dot",
+    "title": "Nigerian People and Culture",
+    "code": "DDS 121",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 174,
+  "fields": {
+    "department": "dot",
+    "title": "Basic Accounting Techniques I",
+    "code": "DDS 122",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 175,
+  "fields": {
+    "department": "dot",
+    "title": "Citizenship Education II",
+    "code": "GNS 121",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 176,
+  "fields": {
+    "department": "dot",
+    "title": "Communication in English II",
+    "code": "GNS 202",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 177,
+  "fields": {
+    "department": "dot",
+    "title": "Computer Application Packages I",
+    "code": "COM 123",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 178,
+  "fields": {
+    "department": "dot",
+    "title": "Introduction to Entrepreneurship",
+    "code": "EED",
+    "semester": "second",
+    "level": "100lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 179,
+  "fields": {
+    "department": "dot",
+    "title": "Clinical Optical Dispensing II",
+    "code": "DDO 211",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 180,
+  "fields": {
+    "department": "dot",
+    "title": "Physical Optics II",
+    "code": "DDO 212",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 181,
+  "fields": {
+    "department": "dot",
+    "title": "Synopsis of Ophthalmic Lenses",
+    "code": "DDO 213",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 182,
+  "fields": {
+    "department": "dot",
+    "title": "Safety and First Aids",
+    "code": "DDO 214",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 183,
+  "fields": {
+    "department": "dot",
+    "title": "Optical Laboratory I",
+    "code": "DDO 215",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 4
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 184,
+  "fields": {
+    "department": "dot",
+    "title": "Primary Health Care Management I",
+    "code": "CHO 111",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 1
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 185,
+  "fields": {
+    "department": "dot",
+    "title": "Principle of Accounting II",
+    "code": "ACC 121",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 4
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 186,
+  "fields": {
+    "department": "dot",
+    "title": "Practice of Entrepreneurship",
+    "code": "EED 216",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 187,
+  "fields": {
+    "department": "dot",
+    "title": "Research Methodology",
+    "code": "GNS 288",
+    "semester": "first",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 188,
+  "fields": {
+    "department": "dot",
+    "title": "Optical Laboratory II",
+    "code": "DDO 221",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 6
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 189,
+  "fields": {
+    "department": "dot",
+    "title": "Professional Ethics",
+    "code": "DDO 222",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 190,
+  "fields": {
+    "department": "dot",
+    "title": "Introduction to Ocular Prosthesis",
+    "code": "DDO 223",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 3
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 191,
+  "fields": {
+    "department": "dot",
+    "title": "Dispensing Opticianry Practice Management",
+    "code": "DDO 224",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 192,
+  "fields": {
+    "department": "dot",
+    "title": "Seminar in Dispensing Optics",
+    "code": "DDO 225",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 2
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 193,
+  "fields": {
+    "department": "dot",
+    "title": "Optical Laboratory III (Practical Manual)",
+    "code": "DDO 226",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 6
+  }
+},
+{
+  "model": "dashboard.course",
+  "pk": 194,
+  "fields": {
+    "department": "dot",
+    "title": "Project Work",
+    "code": "DDO 227",
+    "semester": "second",
+    "level": "200lv",
+    "credit_load": 6
+  }
+}
+]
